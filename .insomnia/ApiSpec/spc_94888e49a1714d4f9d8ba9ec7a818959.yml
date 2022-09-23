@@ -1,7 +1,7 @@
 _id: spc_94888e49a1714d4f9d8ba9ec7a818959
 type: ApiSpec
 parentId: wrk_14f46741fa704fb193da4b13b28920f7
-modified: 1663968959541
+modified: 1663969032467
 created: 1663967702734
 fileName: feedback
 contents: >-
@@ -61,6 +61,10 @@ contents: >-
                       detail: "[all] is an invalid value. Possible values: [positive, negative, neutral]"
                       instance: "t:beQpT0Hn"
       post:
+        x-kong-plugin-rate-limiting:
+          config:
+            second: 1
+            policy: local
         operationId: add-feedback
         summary: Create feedback
         description: Add a new feedback item
