@@ -1,0 +1,17 @@
+_id: spcrs_4fd2913286c74c61850ad556742de247
+type: ApiSpecRuleset
+parentId: wrk_14f46741fa704fb193da4b13b28920f7
+modified: 1663967891365
+created: 1663967891362
+fileName: New Document
+contents: |-
+  extends: "spectral:oas"
+  rules:
+    tag-description-required:
+      description: Tags must have a description.
+      given: $.tags[*]
+      severity: error
+      then:
+        field: description
+        function: truthy
+contentType: yaml
